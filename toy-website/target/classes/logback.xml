@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="home" value="E:\\mobile-workspace\\DynamicConfigGateway\\logs"/>
+
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%p]%c [%L] %d{yyyy-MM-dd HH:mm:ss.SSS} seq: %X{req.seq} %m %n</pattern>
+        </encoder>
+    </appender>
+
+    <!--<appender name="Access" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--<fileNamePattern>${home}/access.log_%d{yyyy-MM-dd_HH}</fileNamePattern>-->
+            <!--<maxHistory>10</maxHistory>-->
+        <!--</rollingPolicy>-->
+        <!--<encoder>-->
+            <!--<pattern>[%p]%c %d{yyyy-MM-dd HH:mm:ss.SSS} seq: %X{req.seq} %m %n</pattern>-->
+        <!--</encoder>-->
+    <!--</appender>-->
+
+    <logger name="console" level="DEBUG" additivity="false">
+        <appender-ref ref="Console"/>
+    </logger>
+
+    <!--<logger name="accessLogger" level="DEBUG" additivity="false">-->
+        <!--<appender-ref ref="Access"/>-->
+    <!--</logger>-->
+
+    <root level="DEBUG">
+        <appender-ref ref="Console"/>
+    </root>
+
+</configuration>
